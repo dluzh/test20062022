@@ -6,18 +6,19 @@ Laravel app grabbing rss feeds by scheduler
 
 ## Running the App
 To run the app clone it from git:
-
 `git clone https://github.com/dluzh/test20062022.git`
 
 Then build, up, migrate & seed:
-1. `cd test20062022`
-2. `docker-compose -f ./docker/docker-compose.yml build`
-3. `docker-compose -f ./docker/docker-compose.yml up -d`
-4. `docker exec -i docker_www_1 php artisan migrate:fresh --seed`
+1. `make all`
 
-If you want to start scheduled task, run the following commands in docker_www_1 container:
-
-4. `/usr/bin/supervisord`
+The Makefile has the following targets:
+```
+make all	    runs everything
+make build	    builds a Docker images
+make up		    run the Docker images
+make migrate	runs migration and database seeding
+make supervisor runs supervisor
+```
 
 Note: task scheduled to launch everyminute for development purposes
 
