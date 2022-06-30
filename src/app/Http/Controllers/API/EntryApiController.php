@@ -30,7 +30,7 @@ class EntryApiController extends BaseController
     public function store(Request $request)
     {
         $input = $request->all();
-        
+
         $validator = Validator::make($input, [
             'title' => 'required',
             'link' => 'required',
@@ -101,10 +101,7 @@ class EntryApiController extends BaseController
             return $this->sendError('Validation Error.', $validator->errors());
         }
 
-        $entry->title = $input['title'];
-        $entry->link = $input['link'];
-        $entry->description = $input['description'];
-        $entry->save();
+        $entry->update($request->all());
 
         return $this->sendResponse($entry->toArray(), 'Entry updated successfully.');
     }

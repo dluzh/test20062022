@@ -39,13 +39,13 @@ class EntryController extends Controller
      */
     public function store(Request $request)
     {
-         /*
-         * Validating form data
+
+       //* Validating form data
         $this->validate($request, [
             'name' => 'required|max:100',
-            //'slug' => 'required|max:100|unique:products|regex:~^[-_a-z0-9]+$~i',
+            '' => '',
             'description' => 'required',
-        ]);*/
+        ]);
 
         $product = Entry::create($request->all());
         return redirect()
@@ -93,7 +93,7 @@ class EntryController extends Controller
             'description' => 'required',
         ]);
         /*
-         * Product updating
+         * Entry updating
          */
         $entry->update($request->all());
 

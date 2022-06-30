@@ -21,6 +21,8 @@ services:
     build:
       context: ../
       dockerfile: ./docker/Php.Dockerfile
+    volumes:
+      - "../src/:/var/www/html"
     ports:
       - 80:80
       - 443:443

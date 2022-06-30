@@ -39,3 +39,4 @@ https://lifehacker.com/rss
 2. Add authorisation for UI and API
 3. Write unit tests
 4. Check for vulnerabilities using Snyk
+5. Seed more db tables
